@@ -74,6 +74,9 @@ public class SunView extends View {
 
         initAttrs(context, attrs);
     }
+    public  void setArcSolidColor(String color){
+        mArcSolidColor = Color.parseColor(color);
+    }
 
     private void initAttrs(Context context, AttributeSet attrs) {
         TypedArray attrArray = context.obtainStyledAttributes(attrs, R.styleable.WeatherViewStyle);
