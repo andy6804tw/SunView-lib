@@ -1,7 +1,7 @@
 # SunView-lib
 It is the Weather View for sunset
 
-<img src="Screenshot/demo.gif" width="200">
+<img src="Screenshot/360551.jpg" width="200">
 
 
 How to
