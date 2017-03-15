@@ -74,8 +74,21 @@ public class SunView extends View {
 
         initAttrs(context, attrs);
     }
-    public  void setArcSolidColor(String color){
-        mArcSolidColor = Color.parseColor(color);
+    public  void setArcSolidColor(int color){//拱型內部顏色
+        //mArcSolidColor = Color.parseColor(color);
+        mArcSolidColor=color;
+    }
+    public void setArcColor(int color){//拱形虛線顏色
+        mArcColor= color;
+    }
+    public void setBottomLineColor(int color){//拱形底線顏色
+        mBottomLineColor= color;
+    }
+    public void setTimeTextColor(int color){//字體顏色
+        mTimeTextColor= color;
+    }
+    public void setSunColor(int color){//太陽顏色
+        mSunColor= color;
     }
 
     private void initAttrs(Context context, AttributeSet attrs) {
@@ -133,6 +146,14 @@ public class SunView extends View {
         mEndTime =s;
     }
     public void setCurrentTime(String s){
+        String str_Start[]=mStartTime.split(":");
+        String str_Current[]=s.split(":");
+        int current=Integer.parseInt(str_Current[0])*10+Integer.parseInt(str_Current[1]);
+        int Start=Integer.parseInt(str_Start[0])*10+Integer.parseInt(str_Start[1]);
+        if(current<Start){
+            mArcSolidColor =getResources().getColor(R.color.Transparent);
+            s=Integer.parseInt(str_Start[0])+":"+(Integer.parseInt(str_Start[1])-1);
+        }
         mCurrentTime =s;
     }
 

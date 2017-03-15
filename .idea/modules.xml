@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SunView2.iml" filepath="$PROJECT_DIR$/SunView2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunView.iml" filepath="$PROJECT_DIR$/sunView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sunviewlibrary/sunviewlibrary.iml" filepath="$PROJECT_DIR$/sunviewlibrary/sunviewlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/sunviewlibrary/sunviewlibrary.iml" filepath="$PROJECT_DIR$/sunviewlibrary/sunviewlibrary.iml" />
     </modules>
   </component>

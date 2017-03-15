@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="ArcSolidColor">#6effe1a2</color>
+    <color name="ArcColor">#ff8a8a</color>
+    <color name="BottomLineColor">#9c6637</color>
+    <color name="TimeTextColor">#5b5b5b</color>
+    <color name="SunColor">#fcd682</color>
 </resources>

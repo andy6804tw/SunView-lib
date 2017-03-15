@@ -14,7 +14,7 @@
     <color name="default_arc_color">#fff</color>
     <color name="default_arc_solid_color">#ffe1a2</color>
     <color name="default_sun_color">#fff</color>
-
+    <color name="Transparent">#00ffffff</color>
 
 
 
