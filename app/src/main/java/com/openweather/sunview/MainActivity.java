@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         sunView=(SunView)findViewById(R.id.sunView);
         sunView.setStartTime("6:05");
         sunView.setEndTime("18:01");
-        sunView.setCurrentTime("10:04");
+        sunView.setCurrentTime("12:47");
         sunView.setArcSolidColor(getResources().getColor(R.color.ArcSolidColor));//拱型內部顏色
         sunView.setArcColor(getResources().getColor(R.color.ArcColor));//拱形虛線顏色
         sunView.setBottomLineColor(getResources().getColor(R.color.BottomLineColor));//拱形底線顏色
