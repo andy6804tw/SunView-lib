@@ -383,7 +383,7 @@ public class SunView extends View {
         int startTextWidth = getTextWidth(mPaint, mStartTime);
         int endTextWidth = getTextWidth(mPaint, mEndTime);
 
-        int textHeight = getTextHeight();
+        int textHeight = getTextHeight()+15;
 
         mPaint.setPathEffect(null);
         mPaint.setStyle(Paint.Style.FILL);
