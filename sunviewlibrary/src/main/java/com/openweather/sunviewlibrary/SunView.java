@@ -452,7 +452,7 @@ public class SunView extends View {
      * @return
      */
     private int getBottomHeightGap(){
-        return (int) (getPaddingBottom() + getTextHeight() + mTextPadding);
+        return (int) (getPaddingBottom() + getTextHeight() + mTextPadding)+10;
     }
 
     /**
