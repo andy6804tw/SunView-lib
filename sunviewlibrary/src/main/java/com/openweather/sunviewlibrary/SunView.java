@@ -148,11 +148,11 @@ public class SunView extends View {
     public void setCurrentTime(String s){
         String str_Start[]=mStartTime.split(":");
         String str_Current[]=s.split(":");
-        int current=Integer.parseInt(str_Current[0])*10+Integer.parseInt(str_Current[1]);
-        int Start=Integer.parseInt(str_Start[0])*10+Integer.parseInt(str_Start[1]);
+        int current=Integer.parseInt(str_Current[0])*60+Integer.parseInt(str_Current[1]);
+        int Start=Integer.parseInt(str_Start[0])*60+Integer.parseInt(str_Start[1]);
         if(current<Start){
             mArcSolidColor =getResources().getColor(R.color.Transparent);
-            s=Integer.parseInt(str_Start[0])+":"+(Integer.parseInt(str_Start[1])-1);
+            s=mStartTime;
         }
         mCurrentTime =s;
     }
@@ -233,7 +233,7 @@ public class SunView extends View {
     }
 
     /**
-     * 画圆弧
+     * 畫圓弧
      *
      * @param canvas
      */
@@ -286,7 +286,7 @@ public class SunView extends View {
     }
 
     /**
-     * 绘制天气图标
+     * 繪製天氣圖標
      *
      * @param canvas
      * @param point
@@ -312,7 +312,7 @@ public class SunView extends View {
     }
 
     /**
-     * 画太阳
+     * 畫太陽
      *
      * @param canvas
      * @param point
@@ -340,7 +340,7 @@ public class SunView extends View {
     }
 
     /**
-     * 画实心圆弧
+     * 畫實心圓弧
      *
      * @param canvas
      * @param rectF
@@ -394,29 +394,30 @@ public class SunView extends View {
 
     private int getTextHeight() {
         mPaint.setTextSize(mTimeTextSize);
-        Paint.FontMetrics fm = mPaint.getFontMetrics();// 得到系统默认字体属性
+        Paint.FontMetrics fm = mPaint.getFontMetrics();// 得到系統默認字體屬性
         return (int) Math.ceil(fm.descent - fm.ascent);
     }
 
     /**
-     * 画三角形
+     * 畫三角形
      *
      * @param canvas
      * @param rect
      * @param point
      */
     private void drawTriangle(Canvas canvas, RectF rect, PointF point) {
-        //因为计算损失精度,所以这里用1像素来微调
+
+        //因為計算損失精度，所以這裡用1像素來微調
         Path path = new Path();
-        path.moveTo(rect.left - 1 + offsetX, rect.centerY() - offsetY);// 此点为多边形的起点
+        path.moveTo(rect.left - 1 + offsetX, rect.centerY() - offsetY);// 此點為多邊形的起點
         path.lineTo(point.x - 1, point.y - 1);
         path.lineTo(point.x - 1, rect.centerY() - offsetY);
-        path.close(); // 使这些点构成封闭的多边形
+        path.close(); //使這些點構成封閉的多邊形
         canvas.drawPath(path, mPaint);
     }
 
     /**
-     * 画底部线条
+     * 畫底部線條
      *
      * @param canvas
      */
@@ -432,7 +433,7 @@ public class SunView extends View {
 
 
     /**
-     * 宽度除了圆弧以外的空隙
+     * 寬度除了圓弧以外的空隙
      * @return
      */
     private int getWidthGap(){
@@ -440,7 +441,7 @@ public class SunView extends View {
     }
 
     /**
-     * 高度除了圆弧以外的空隙
+     * 高度除了圓弧以外的空隙
      * @return
      */
     private int getHeightGap(){
@@ -448,7 +449,7 @@ public class SunView extends View {
     }
 
     /**
-     * 圆弧底部空隙
+     * 圓弧底部空隙
      * @return
      */
     private int getBottomHeightGap(){
@@ -456,7 +457,7 @@ public class SunView extends View {
     }
 
     /**
-     * 天气图标高度
+     * 天氣圖標高度
      * @return
      */
     private int getWeatherHeight(){
@@ -470,7 +471,7 @@ public class SunView extends View {
     }
 
     /**
-     * 天气图标宽度
+     * 天氣圖標寬度
      * @return
      */
     private int getWeatherWidth(){
@@ -486,19 +487,19 @@ public class SunView extends View {
 
 
 
-    //依圆心坐标，半径，扇形角度，计算出扇形终射线与圆弧交叉点的xy坐标
+    //依圓心坐標，半徑，扇形角度，計算出扇形終射線與圓弧交叉點的xy坐標
     public PointF calcArcEndPointXY(float cirX, float cirY, float radius, float cirAngle) {
 
         PointF point = new PointF();
 
-        //将角度转换为弧度
+        //將角度轉換為弧度
         float arcAngle = (float) (Math.PI * cirAngle / 180.0);
 
-        //当angle = 90°时，radian = ∏ / 2 = ∏ * 90°/ 180°= ∏ * angle / 180°，
-        //当angle = 180°时，radian = ∏ = ∏ * 180°/ 180°= ∏ * angle / 180°，
-        //所以radian(弧度) = ∏ * angle / 180（1弧度是等于半径的圆弧对应的圆心角，1度是1/360圆心角）
+        //當角度= 90°時，弧度=Π/ 2 =Π* 90°/ 180°=Π*角度/ 180°，
+        //當角度= 180°時，弧度=Π=Π* 180°/ 180°=Π*角度/ 180°，
+        //所以弧度（弧度）=Π* angle / 180（1弧度等於半徑的圓弧對應的圓心角，1度是1/360圓心角）
 
-        if (cirAngle < 90)     //直角的三角形斜边是半径
+        if (cirAngle < 90)     //直角的三角形斜邊是半徑
         {
             point.x = cirX + (float) (Math.cos(arcAngle)) * radius;
             point.y = cirY + (float) (Math.sin(arcAngle)) * radius;
