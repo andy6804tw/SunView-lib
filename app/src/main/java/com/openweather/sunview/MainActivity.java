@@ -12,9 +12,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         sunView=(SunView)findViewById(R.id.sunView);
-        sunView.setStartTime("06:05");
-        sunView.setEndTime("18:01");
-        sunView.setCurrentTime("08:47");
+        sunView.setStartTime("05:52");
+        sunView.setEndTime("18:14");
+        sunView.setCurrentTime("1:28");
         sunView.setArcSolidColor(getResources().getColor(R.color.ArcSolidColor));//拱型內部顏色
         sunView.setArcColor(getResources().getColor(R.color.ArcColor));//拱形虛線顏色
         sunView.setBottomLineColor(getResources().getColor(R.color.BottomLineColor));//拱形底線顏色
